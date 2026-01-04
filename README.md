@@ -13,7 +13,7 @@ A sample Android application demonstrating the usage of the [androidx.ink](https
 
 ## Screenshots
 
-*Coming soon*
+<img height="800" src="https://github.com/user-attachments/assets/df3bc759-1661-4968-8647-7f8dce91468b" />
 
 ## Requirements
 
@@ -132,7 +132,7 @@ override fun onDraw(canvas: Canvas) {
 ```
 MIT License
 
-Copyright (c) 2025 hearsilent
+Copyright (c) 2026 HearSilent
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
