@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.MainActivity">
+
+    <!-- Drawing canvas area -->
+    <FrameLayout
+        android:id="@+id/drawingContainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@id/colorPaletteContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Canvas for drawing finished strokes -->
+        <com.hearsilent.inksample.libs.views.FinishedStrokesView
+            android:id="@+id/finishedStrokesView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <!-- InProgressStrokesView for drawing wet strokes -->
+        <androidx.ink.authoring.InProgressStrokesView
+            android:id="@+id/inProgressStrokesView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </FrameLayout>
+
+    <!-- Color palette and controls -->
+    <LinearLayout
+        android:id="@+id/colorPaletteContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/design_default_color_surface"
+        android:elevation="8dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!-- Color buttons -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/colorBlack"
+            style="@style/Widget.Material3.Button.IconButton.Filled"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="4dp"
+            android:backgroundTint="#FF000000" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/colorRed"
+            style="@style/Widget.Material3.Button.IconButton.Filled"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="4dp"
+            android:backgroundTint="#FFE53935" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/colorGreen"
+            style="@style/Widget.Material3.Button.IconButton.Filled"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="4dp"
+            android:backgroundTint="#FF43A047" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/colorBlue"
+            style="@style/Widget.Material3.Button.IconButton.Filled"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="4dp"
+            android:backgroundTint="#FF1E88E5" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/colorYellow"
+            style="@style/Widget.Material3.Button.IconButton.Filled"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="4dp"
+            android:backgroundTint="#FFFDD835" />
+
+        <!-- Divider -->
+        <View
+            android:layout_width="1dp"
+            android:layout_height="32dp"
+            android:layout_marginHorizontal="16dp"
+            android:background="@android:color/darker_gray" />
+
+        <!-- Clear button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/clearButton"
+            style="@style/Widget.Material3.Button.IconButton.Filled.Tonal"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_margin="4dp"
+            app:icon="@android:drawable/ic_menu_delete" />
+
+    </LinearLayout>
+
+    <!-- Stroke size indicator -->
+    <com.google.android.material.slider.Slider
+        android:id="@+id/strokeSizeSlider"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="4dp"
+        android:stepSize="1"
+        android:value="5"
+        android:valueFrom="1"
+        android:valueTo="30"
+        app:layout_constraintBottom_toTopOf="@id/colorPaletteContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
